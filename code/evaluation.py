@@ -61,7 +61,7 @@ with open(f"data/{args.language}/prepared/word_idx_{args.language}.json") as fh:
 with open(f"data/{args.language}/prepared/pos_idx_{args.language}.json") as fh:
     pos_vocab = json.load(fh)
 
-dataset_annotated = np.load(f"data/{args.language}/prepared_annotated/dataset_{args.language}_annotated.npz")
+dataset_annotated = np.load(f"data/{args.language}/prepared_annotated/dataset_{args.language}.npz")
 test_y = dataset_annotated["train_y"]
 
 dataset = np.load(f"data/{args.language}/prepared/dataset_{args.language}.npz")

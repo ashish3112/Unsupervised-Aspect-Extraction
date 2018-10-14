@@ -186,6 +186,7 @@ for ii in range(args.epochs):
         min_loss = loss
         word_emb = K.get_value(model.get_layer('word_emb').embeddings)
         aspect_emb = K.get_value(model.get_layer('aspect_emb').W)
+        np.savetxt(out_dir + '/aspect_embeddings.txt' + args.model_name, aspect_emb)
         word_emb = word_emb / np.linalg.norm(word_emb, axis=-1, keepdims=True)
         aspect_emb = aspect_emb / np.linalg.norm(aspect_emb, axis=-1, keepdims=True)
         aspect_file = codecs.open(out_dir + '/aspect.log' + args.model_name, 'w', 'utf-8')
